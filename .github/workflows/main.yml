@@ -26,6 +26,7 @@ jobs:
     - run: echo "Load Test"
   Production:
     runs-on: "ubuntu-latest"
+    environment: Production
     needs: [Test, Load-Test]
     if: github.event.inputs.environment == 'Production'
     steps:
